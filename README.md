@@ -5,6 +5,8 @@ Prezto is the configuration framework for [Zsh][1]; it enriches the command line
 interface environment with sane defaults, aliases, functions, auto completion,
 and prompt themes.
 
+This is a fork of the [original semi-abandoned Prezto][9] written by Sorin Ionescu.
+
 Installation
 ------------
 
@@ -118,3 +120,4 @@ SOFTWARE.
 [6]: http://gitref.org
 [7]: http://www.bash2zsh.com/zsh_refcard/refcard.pdf
 [8]: http://grml.org/zsh/zsh-lovers.html
+[9]: https://github.com/sorin-ionescu/prezto
