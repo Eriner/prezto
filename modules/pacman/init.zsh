@@ -4,6 +4,7 @@
 # Authors:
 #   Benjamin Boudreau <dreurmail@gmail.com>
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
+#	Matt Hamilten <m@tthamilton.com>
 #
 # Tips:
 #   https://wiki.archlinux.org/index.php/Pacman_Tips
@@ -32,6 +33,9 @@ else
   _pacman_sudo='sudo '
 fi
 
+# Set package compression and type
+_pacman_package_ext='.pkg.tar.xz'
+
 #
 # Aliases
 #
@@ -44,6 +48,9 @@ alias paci="${_pacman_sudo}${_pacman_frontend} --sync"
 
 # Installs packages from files.
 alias pacI="${_pacman_sudo}${_pacman_frontend} --upgrade"
+
+# Installs all packages in local directory
+alias pacd="${_pacman_sudo}${_pacman_frontend} --upgrade *${_pacman_package_ext}"
 
 # Removes packages and unneeded dependencies.
 alias pacx="${_pacman_sudo}${_pacman_frontend} --remove"
@@ -81,4 +88,4 @@ fi
 # upgrades outdated packages.
 alias pacU="${_pacman_sudo}${_pacman_frontend} --sync --refresh --sysupgrade"
 
-unset _pacman_{frontend,sudo}
+unset _pacman_{frontend,sudo,package_ext}
