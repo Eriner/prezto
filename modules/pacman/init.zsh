@@ -4,7 +4,7 @@
 # Authors:
 #   Benjamin Boudreau <dreurmail@gmail.com>
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
-#	Matt Hamilten <m@tthamilton.com>
+#   Matt Hamilton <m@tthamilton.com>
 #
 # Tips:
 #   https://wiki.archlinux.org/index.php/Pacman_Tips
