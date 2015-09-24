@@ -186,3 +186,6 @@ alias gwc='git clean -n'
 alias gwC='git clean -df'
 alias gwx='git rm -r'
 alias gwX='git rm -rf'
+
+# Misc
+alias g..='cd $(git-root || echo ".")'
