@@ -19,7 +19,9 @@ zstyle ':prezto:*:*' color 'yes'
 # zstyle ':prezto:load' zmodule 'attr' 'stat'
 
 # Set the Zsh functions to load (man zshcontrib).
-# zstyle ':prezto:load' zfunction 'zargs' 'zmv'
+# If Zsh version >= 5.1, it is recommended to enable 'bracketed-paste-magic' and 'url-quote-magic'
+#   to be able to paste URLs into a terminal without errors due to globbing. 
+# zstyle ':prezto:load' zfunction 'zargs' 'zmv' 'bracketed-paste-magic' 'url-quote-magic'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
