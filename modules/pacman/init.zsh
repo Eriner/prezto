@@ -44,7 +44,7 @@ _pacman_package_ext='.pkg.tar.xz'
 alias pac="${_pacman_frontend}"
 
 # Installs packages from repositories.
-alias paci="${_pacman_sudo}${_pacman_frontend} --sync"
+alias paci="${_pacman_sudo}${_pacman_frontend} --sync --sysupgrade"
 
 # Installs packages from files.
 alias pacI="${_pacman_sudo}${_pacman_frontend} --upgrade"
