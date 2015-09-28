@@ -29,13 +29,13 @@ function +vi-git_precmd {
   fi
 }
 
-function prompt_giddie_precmd {
+prompt_giddie_precmd() {
   # Replace '/home/<user>' with '~'.
   _prompt_giddie_pwd="${PWD/#$HOME/~}"
   vcs_info
 }
 
-function prompt_giddie_setup {
+prompt_giddie_setup() {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
   prompt_opts=(cr percent subst)

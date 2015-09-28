@@ -165,27 +165,27 @@ alias http-serve='env python2 -m SimpleHTTPServer'
 #
 
 # Makes a directory and changes to it.
-function mkdcd {
+mkdcd() {
   [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
 }
 
 # Changes to a directory and lists its contents.
-function cdls {
+cdls() {
   builtin cd "$argv[-1]" && ls "${(@)argv[1,-2]}"
 }
 
 # Pushes an entry onto the directory stack and lists its contents.
-function pushdls {
+pushdls() {
   builtin pushd "$argv[-1]" && ls "${(@)argv[1,-2]}"
 }
 
 # Pops an entry off the directory stack and lists its contents.
-function popdls {
+popdls() {
   builtin popd "$argv[-1]" && ls "${(@)argv[1,-2]}"
 }
 
 # Prints columns 1 2 3 ... n.
-function slit {
+slit() {
   awk "{ print ${(j:,:):-\$${^@}} }"
 }
 
@@ -195,6 +195,6 @@ function find-exec {
 }
 
 # Displays user owned processes status.
-function psu {
+psu() {
   ps -U "${1:-$LOGNAME}" -o 'pid,%cpu,%mem,command' "${(@)argv[2,-1]}"
 }
