@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+#
+# prompt setup function common to many prompts
+# moved to external function to ruduce rudundant code
+#
+local prompt="$1"
+local pwd="${PWD/#$HOME/~}"
+ 
+if [[ "$pwd" == (#m)[/~] ]]; then
+	# because this function is sourced from other scripts, the vars must be exported
+  export _prompt_"${prompt}"_pwd="$MATCH"
+  unset MATCH
+else
+  export _prompt_"${prompt}"_pwd="${${${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}%/}//\%/%%}/${${pwd:t}//\%/%%}"
+fi
