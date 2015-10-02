@@ -1,5 +1,4 @@
 #
-# this is my insert for test
 # Initializes Prezto.
 #
 # Authors:
