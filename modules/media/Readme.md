@@ -14,18 +14,18 @@ If you would like to change the *default* settings, they can be changed using th
 
 | option  | quality | compression | speed   | description                                                                                                                              |
 |---------|---------|-------------|---------|------------------------------------------------------------------------------------------------------------------------------------------|
-| fast    | low     | high        | fast    | This option should be used if you do not care about quality, and only care about a low overhead to convert the file                      |
+| fast    | low     | high        | fast    | This option should be used if you do not care less about quality and more about low overhead to convert the file                      |
 | default | average | average     | average | This is the default setting, which tries to balance the options to produce a decent quality file with an average compression ratio.      |
-| best    | high    | average     | slow    | If all you care about is producing the best quality conversions and are willing to spend more CPU cycles, you should choose this option. |
+| best    | high    | average     | slow    | If all you care about is producing the best quality conversions and are willing to spend significantly more CPU cycles, you should choose this option. |
 
 Aliases
 -------
 
 ### ffmpeg
 
-All of these aliases and functions will output the resulting file in the *current directory* unless otherwise specified.
+All of these aliases and functions will output the resulting file in the *current directory* as unless otherwise specified.
 
-The options above can also be set on the command line as an optional argument.
+The options above can also be set on the command line as an optional argument. ex: `fftwebm -fast video.mp4`
 
 #### Transcoding
 
@@ -44,7 +44,7 @@ The options above can also be set on the command line as an optional argument.
 
 #### Join
 
-  - `ffj <file> ... <file>` join an arbitrary nubmer of files into a single file.
+  - `ffj <file> ... <file>` join an arbitrary number of files into a single file.
 
 #### Extract
 
@@ -60,15 +60,16 @@ The options above can also be set on the command line as an optional argument.
   
 ### lame
 
-  - `lvt320 <file>` transcode to mp3 320.
-  - `lvt0 <file>` transcode to mp3 V0.
-  - `lvt2 <file>` transcode to mp3 V2.
+  - `lt320 <file> .. <file>` transcode file(s) to mp3 320.
+  - `lt0 <file> .. <file>` transcode file(s) to mp3 V0.
+  - `lt2 <file> .. <file>` transcode file(s) to mp3 V2.
 
 ### youtube-dl
 
   - `ytdl` alias to `youtube-dl`.
   - `ytmp3 <url>` download audio from a given URL. 
 
-### image optimization
+### image manipulation
 
-  - `imgo <file>` optimize image (lossless) based on file type.
+  - `imgo <file> .. <file>` optimize image(s) with lossless compression based on file type.
+  - `imgs <file> .. <file>` scrub all EXIF data from image(s).
