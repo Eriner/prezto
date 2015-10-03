@@ -29,7 +29,9 @@ Aliases
 
 All of these aliases and functions will output the resulting file in the *current directory* as unless otherwise specified.
 
+<!--
 The options above can also be set on the command line as an optional argument. ex: `fftwebm -fast video.mp4`
+-->
 
 #### Transcoding
 
@@ -37,7 +39,6 @@ The options above can also be set on the command line as an optional argument. e
   - `fft265 <file>` converts a video file to x265 (does not transcode audio).
   - `fftmute <file>` disables the audio stream of a file.
   - `fftwebm <file>` converts a video file to webm (vp9) format with opus audio.
-  - `fftwebm -mute <file>` converts a video file to webm (vp9) format with no audio.
   - `fftgif <file>` converts a video file to gif.
   - `ffts <dimensions> <file>` resize a video for given `<dimensions>`. (ex: 480x320) 
 
