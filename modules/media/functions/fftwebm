@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+
+#
+# ffmpeg transcode to webm
+#
+# Authors:
+#	Matt Hamilton <m@tthamilton.com>
+#
+
+local usage filename outfile
+
+usage="$(
+cat << EOF
+usage: $0 [file]
+EOF
+)"
+
+if (( $# < 1 )); then
+	print "$usage" >&2
+	return 1
+fi
+
+filename=$(basename "$1")
+outfile="${filename%.*}.webm"
+
+ffmpeg -i "$filename" -c:v libvpx-vp9 -b:v 1M -threads 0 \
+	-speed 1 -tile-columns 6 -frame-parallel 1 -auto-alt-ref 1 \
+	-lag-in-frames 25 -c:a libopus -b:a 64k -f webm "$outfile"
+

@@ -8,6 +8,9 @@ Settings
 
 ffmpeg has many options and variations that trade quality, compression, and CPU cycles. This module uses sane defaults in an effort to choose what will be best for *most* people.
 
+<!---
+disabling for now, may or may not implement
+
 If you would like to change the *default* settings, they can be changed using the following example:
 
 	zstyle ':prezto:module:media:ffmpeg' ffwebm 'fast'
@@ -18,6 +21,7 @@ If you would like to change the *default* settings, they can be changed using th
 | default | average | average     | average | This is the default setting, which tries to balance the options to produce a decent quality file with an average compression ratio.      |
 | best    | high    | average     | slow    | If all you care about is producing the best quality conversions and are willing to spend significantly more CPU cycles, you should choose this option. |
 
+-->
 Aliases
 -------
 
