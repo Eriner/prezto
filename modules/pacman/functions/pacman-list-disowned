@@ -2,21 +2,19 @@
 # Lists Pacman disowned files.
 #
 # Authors:
-#   Benjamin Boudreau <dreurmail@gmail.com>
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   https://wiki.archlinux.org/index.php/Pacman_tips
 #
 
-local tmp="${TMPDIR:-/tmp}/pacman-disowned-$UID-$$"
-local db="$tmp/db"
-local fs="$tmp/fs"
+local tmp=${TMPDIR-/tmp}/pacman-disowned-$UID-$$
+local db=$tmp/db
+local fs=$tmp/fs
 
 mkdir "$tmp"
-trap  'rm -rf "$tmp"' EXIT
+trap 'rm -rf "$tmp"' EXIT
 
-pacman --quiet --query --list | sort --unique > "$db"
+pacman --query --quiet --list | sort -u > "$db"
 
-find /bin /etc /lib /sbin /usr \
-  ! -name lost+found \
-    \( -type d -printf '%p/\n' -o -print \) | sort > "$fs"
+find /etc /opt /usr ! -name lost+found \( -type d -printf '%p/\n' -o -print \) | sort > "$fs"
 
 comm -23 "$fs" "$db"
+
