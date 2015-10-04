@@ -61,7 +61,7 @@ about this and Prezto has already been [opened][2].
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][5].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][5].*
 
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
   - [Colin Hebert](https://github.com/ColinHebert)
@@ -72,6 +72,7 @@ Authors
 [2]: https://github.com/sorin-ionescu/prezto/issues/62
 [3]: https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
 [4]: https://github.com/mxcl/homebrew
-[5]: https://github.com/sorin-ionescu/prezto/issues
+[5]: https://github.com/Eriner/prezto/issues
 [6]: http://iterm2.com
 [7]: https://gitlab.com/gnachman/iterm2/wikis/TmuxIntegration
+

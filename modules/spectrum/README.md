@@ -82,10 +82,11 @@ Use `$BG[none]`, `$FG[none]`, or `$FX[none]` to turn off formatting.
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][2].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][2].*
 
   - [P.C. Shyamshankar](https://github.com/sykora)
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
 [1]: http://lucentbeing.com/writing/archives/a-guide-to-256-color-codes/
-[2]: https://github.com/sorin-ionescu/prezto/issues
+[2]: https://github.com/Eriner/prezto/issues
+

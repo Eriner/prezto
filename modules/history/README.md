@@ -34,10 +34,11 @@ Aliases
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][2].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][2].*
 
   - [Robby Russell](https://github.com/robbyrussell)
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
 [1]: http://zsh.sourceforge.net/Guide/zshguide02.html#l16
-[2]: https://github.com/sorin-ionescu/prezto/issues
+[2]: https://github.com/Eriner/prezto/issues
+

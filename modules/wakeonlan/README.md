@@ -26,11 +26,12 @@ For more information on the configuration file format, read the
 Authors
 -------
 
-*The authors of this module should be contacted via [issue tracker][3].*
+*The authors and maintainers of this module should be contacted via [issue tracker][3].*
 
   - [Paul Dann](https://github.com/giddie)
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
 [1]: http://gsd.di.uminho.pt/jpo/software/wakeonlan/
 [2]: http://man.cx/wakeonlan
-[3]: https://github.com/sorin-ionescu/prezto/issues
+[3]: https://github.com/Eriner/prezto/issues
+

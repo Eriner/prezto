@@ -102,10 +102,11 @@ The most basic example of this function can be seen below.
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][3].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][3].*
 
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
 [1]: http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Prompt-Themes
 [2]: http://zsh.sourceforge.net/Doc/Release/Functions.html#Hook-Functions
-[3]: https://github.com/sorin-ionescu/prezto/issues
+[3]: https://github.com/Eriner/prezto/issues
+

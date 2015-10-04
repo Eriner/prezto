@@ -19,10 +19,11 @@ To load multiple identities, add the following line to *zpreztorc*:
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][3].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][3].*
 
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
 [1]: http://www.openssh.com
 [2]: http://www.openbsd.org/cgi-bin/man.cgi?query=ssh-agent&sektion=1
-[3]: https://github.com/sorin-ionescu/prezto/issues
+[3]: https://github.com/Eriner/prezto/issues
+

@@ -27,11 +27,12 @@ Functions
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][4].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][4].*
 
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
 [1]: http://www.apple.com/macosx/
 [2]: http://kapeli.com/dash
 [3]: http://www.iterm2.com/
-[4]: https://github.com/sorin-ionescu/prezto/issues
+[4]: https://github.com/Eriner/prezto/issues
+

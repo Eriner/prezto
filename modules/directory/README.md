@@ -27,9 +27,9 @@ Aliases
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][1].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][1].*
 
   - [James Cox](https://github.com/imajes)
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
-[1]: https://github.com/sorin-ionescu/prezto/issues
+[1]: https://github.com/Eriner/prezto/issues

@@ -8,7 +8,7 @@ Settings
 
 ### Key bindings
 
-To enable key bindings, add the following to *zpreztorc*, and replace 'bindings'
+To enable key bindings, add the following to *zpreztorc*, replacing 'bindings'
 with 'emacs' or 'vi'.
 
     zstyle ':prezto:module:editor' key-bindings 'bindings'
@@ -54,8 +54,9 @@ Then add `$editor_info[context]`, where context is *keymap*, *insert*, or
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][1].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][1].*
 
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
-[1]: https://github.com/sorin-ionescu/oh-my-zsh/issues
+[1]: https://github.com/Eriner/prezto/issues
+

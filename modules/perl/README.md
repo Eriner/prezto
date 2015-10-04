@@ -54,10 +54,11 @@ Aliases
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][3].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][3].*
 
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
 [1]: http://www.perl.org
 [2]: http://perlbrew.pl
-[3]: https://github.com/sorin-ionescu/prezto/issues
+[3]: https://github.com/Eriner/prezto/issues
+

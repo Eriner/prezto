@@ -96,7 +96,7 @@ Then add `$ruby_info[version]` to `$PROMPT` or `$RPROMPT` and call
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][5].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][5].*
 
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
@@ -104,5 +104,6 @@ Authors
 [2]: https://rvm.io
 [3]: https://github.com/sstephenson/rbenv
 [4]: http://gembundler.com
-[5]: https://github.com/sorin-ionescu/prezto/issues
+[5]: https://github.com/Eriner/prezto/issues
 [6]: https://github.com/postmodern/chruby
+

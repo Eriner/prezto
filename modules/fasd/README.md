@@ -26,7 +26,7 @@ Type `,`, `f,`, `d,` in front of a comma-separated query or type `,,`,  `,,f`,
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][5].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][5].*
 
   - [Wei Dai](https://github.com/clvv)
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
@@ -35,4 +35,5 @@ Authors
 [2]: https://github.com/joelthelion/autojump
 [3]: https://github.com/rupa/z
 [4]: https://github.com/rupa/v
-[5]: https://github.com/sorin-ionescu/prezto/issues
+[5]: https://github.com/Eriner/prezto/issues
+

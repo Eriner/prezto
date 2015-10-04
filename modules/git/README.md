@@ -4,14 +4,14 @@ Git
 Enhances the [Git][1] distributed version control system by providing aliases,
 functions and by exposing repository status information to prompts.
 
-Git **1.7.2** is the [minimum required version][7].
+Git **1.7.2** is the minimum required version.
 
 Settings
 --------
 
 ### Log
 
-The format of the [git-log][8] output is configurable via the following style,
+The format of the [git-log][7] output is configurable via the following style,
 where context is *brief*, *oneline*, and *medium*, which will be passed to the
 `--pretty=format:` switch.
 
@@ -218,7 +218,7 @@ The following aliases may shadow system commands:
 
   - `gpt` shadows the [GUID partition table maintenance utility][4].
   - `gs` shadows the [Ghostscript interpreter and previewer][5].
-  - `gm` shadows the [Graphics Magick image processor][9].
+  - `gm` shadows the [Graphics Magick image processor][8].
 
 If you frequently use the above commands, you may wish to remove said aliases
 from this module or to disable them at the bottom of the zshrc with `unalias`.
@@ -317,24 +317,21 @@ Second, format how the above attributes are displayed in prompts.
       'prompt'  ' git(%b)' \
       'rprompt' '[%R]'
 
-Last, add `$git_info[prompt]` to `$PROMPT` and `$git_info[rprompt]` to
-`$RPROMPT` respectively and call `git-info` in the `prompt_name_preexec` hook
+Lastly, add `$git_info[prompt]` to `$PROMPT` and `$git_info[rprompt]` to
+`$RPROMPT` respectively, and call `git-info` in the `prompt_name_preexec` hook
 function.
 
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][6].*
-
-  - [Sorin Ionescu](https://github.com/sorin-ionescu)
-  - [Colin Hebert](https://github.com/ColinHebert)
+*The authors and maintainers of this module should be contacted via the [issue tracker][6].*
 
 [1]: http://www.git-scm.com
 [2]: https://github.com/defunkt/hub
 [3]: https://www.github.com
 [4]: http://www.manpagez.com/man/8/gpt/
 [5]: http://linux.die.net/man/1/gs/
-[6]: https://github.com/sorin-ionescu/prezto/issues
-[7]: https://github.com/sorin-ionescu/prezto/issues/219
-[8]: http://www.kernel.org/pub/software/scm/git/docs/git-log.html
-[9]: http://linux.die.net/man/1/gm/
+[6]: https://github.com/Eriner/prezto/issues
+[7]: http://www.kernel.org/pub/software/scm/git/docs/git-log.html
+[8]: http://linux.die.net/man/1/gm/
+

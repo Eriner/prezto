@@ -36,9 +36,10 @@ Functions
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][2].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][2].*
 
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
 [1]: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Expansion-of-Prompt-Sequences
-[2]: https://github.com/sorin-ionescu/prezto/issues
+[2]: https://github.com/Eriner/prezto/issues
+

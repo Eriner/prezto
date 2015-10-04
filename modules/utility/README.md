@@ -149,10 +149,11 @@ Functions
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][1].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][1].*
 
   - [Robby Russell](https://github.com/robbyrussell)
   - [Suraj N. Kurapati](https://github.com/sunaku)
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
-[1]: https://github.com/sorin-ionescu/prezto/issues
+[1]: https://github.com/Eriner/prezto/issues
+

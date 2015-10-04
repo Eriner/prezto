@@ -56,11 +56,12 @@ Functions
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][3].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][3].*
 
   - [Benjamin Boudreau](https://github.com/dreur)
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
 [1]: http://www.archlinux.org/pacman/
 [2]: http://archlinux.fr/yaourt-en
-[3]: https://github.com/sorin-ionescu/prezto/issues
+[3]: https://github.com/Eriner/prezto/issues
+

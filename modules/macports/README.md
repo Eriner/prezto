@@ -17,9 +17,10 @@ Aliases
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][1].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][1].*
 
   - [Matt Cable](https://github.com/curiousstranger)
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
-[1]: https://github.com/sorin-ionescu/prezto/issues
+[1]: https://github.com/Eriner/prezto/issues
+

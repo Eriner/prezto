@@ -7,7 +7,7 @@ Dependency management
 ---------------------
 
 [Carton][1] installs and manages Emacs packages for Emacs package development
-and Emacs configuration.
+and configuration.
 
 This module prepends the Carton directory to the path variable to enable the
 execution of `carton`.
@@ -25,9 +25,10 @@ Aliases
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][2].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][2].*
 
   - [Sebastian Wiesner](https://github.com/lunaryorn)
 
 [1]: https://github.com/rejeep/carton
-[2]: https://github.com/sorin-ionescu/prezto/issues
+[2]: https://github.com/Eriner/prezto/issues
+

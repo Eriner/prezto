@@ -87,7 +87,7 @@ Then add `$python_info[virtualenv]` to `$PROMPT` or `$RPROMPT` and call
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][5].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][5].*
 
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
   - [Sebastian Wiesner](https://github.com/lunaryorn)
@@ -96,4 +96,5 @@ Authors
 [2]: http://www.doughellmann.com/projects/virtualenvwrapper/
 [3]: http://pypi.python.org/pypi/virtualenv
 [4]: https://github.com/yyuu/pyenv
-[5]: https://github.com/sorin-ionescu/prezto/issues
+[5]: https://github.com/Eriner/prezto/issues
+

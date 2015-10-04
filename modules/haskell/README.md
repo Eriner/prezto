@@ -20,9 +20,10 @@ Install packages into per user directories with `cabal install --user`.
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][2].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][2].*
 
   - [Sebastian Wiesner](https://github.com/lunaryorn)
 
 [1]: http://www.haskell.org/cabal/
-[2]: https://github.com/sorin-ionescu/prezto/issues
+[2]: https://github.com/Eriner/prezto/issues
+

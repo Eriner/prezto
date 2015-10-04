@@ -10,14 +10,15 @@ Contributors
 ------------
 
 Completions should be submitted to the [zsh-completions][1] project according
-to its rules and regulations. This module will be synchronized against it.
+to its [Contribution guide][3]. This module will be synchronized against it.
 
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][2].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][2].*
 
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
 [1]: https://github.com/zsh-users/zsh-completions
-[2]: https://github.com/sorin-ionescu/prezto/issues
+[2]: https://github.com/Eriner/prezto/issues
+[3]: https://github.com/zsh-users/zsh-completions/blob/master/README.md#contributing

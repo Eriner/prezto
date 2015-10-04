@@ -51,11 +51,12 @@ To set the search globbing flags, add the following line to *zpreztorc*:
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][3].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][3].*
 
   - [Suraj N. Kurapati](https://github.com/sunaku)
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
 [1]: https://github.com/zsh-users/zsh-history-substring-search
 [2]: http://fishshell.com
-[3]: https://github.com/sorin-ionescu/prezto/issues
+[3]: https://github.com/Eriner/prezto/issues
+

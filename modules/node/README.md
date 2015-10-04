@@ -33,7 +33,7 @@ Then add `$node_info[version]` to either `$PROMPT` or `$RPROMPT` and call
 Authors
 -------
 
-*The authors of this module should be contacted via the [issue tracker][4].*
+*The authors and maintainers of this module should be contacted via the [issue tracker][4].*
 
   - [Sorin Ionescu](https://github.com/sorin-ionescu)
   - [Zeh Rizzatti](https://github.com/zehrizzatti)
@@ -41,5 +41,6 @@ Authors
 [1]: http://nodejs.org
 [2]: http://npmjs.org
 [3]: http://nodejs.org/api
-[4]: https://github.com/sorin-ionescu/prezto/issues
+[4]: https://github.com/Eriner/prezto/issues
 [5]: https://github.com/creationix/nvm
+
