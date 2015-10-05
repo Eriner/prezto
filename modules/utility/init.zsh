@@ -44,6 +44,7 @@ alias rake='noglob rake'
 alias rsync='noglob rsync'
 alias scp='noglob scp'
 alias sftp='noglob sftp'
+alias wget='noglob wget'
 
 # Define general aliases.
 # preserve sudo aliases; see https://wiki.archlinux.org/index.php/Sudo#Passing_aliases
@@ -60,6 +61,7 @@ alias po='popd'
 alias pu='pushd'
 alias rm="${aliases[rm]:-rm} -i"
 alias type='type -a'
+alias chmod='chmod --preserve-root -v'
 
 # ls
 if is-callable 'dircolors'; then
