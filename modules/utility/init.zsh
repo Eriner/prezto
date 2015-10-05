@@ -62,6 +62,7 @@ alias pu='pushd'
 alias rm="${aliases[rm]:-rm} -i"
 alias type='type -a'
 alias chmod='chmod --preserve-root -v'
+alias chown='chown --preserve-root -v'
 
 # ls
 if is-callable 'dircolors'; then
