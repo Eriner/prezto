@@ -46,7 +46,9 @@ alias scp='noglob scp'
 alias sftp='noglob sftp'
 
 # Define general aliases.
-alias _='sudo'
+# preserve sudo aliases; see https://wiki.archlinux.org/index.php/Sudo#Passing_aliases
+alias _='sudo '
+alias sudo='sudo '
 alias b='${(z)BROWSER}'
 alias cp="${aliases[cp]:-cp} -i"
 alias e='${(z)VISUAL:-${(z)EDITOR}}'
