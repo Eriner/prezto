@@ -26,6 +26,10 @@ if [[ ! -d "/tmp/ztrace" ]]; then
 	return 1
 fi
 
+# get some basic system information (kernel and zsh version)
+echo $(zsh --version) > /tmp/ztrace/sysinfo
+echo $(uname -mosr) >> /tmp/ztrace/sysinfo
+
 # we do not want to use ${ZDOTDIR:-$HOME} here.
 # system-wide installs would sed this to /usr/lib.
 cp "${HOME}/.zshrc" "/tmp/ztrace/.zshrc.orig"
