@@ -61,8 +61,14 @@ exec 2>&3 3>&-
 EOF
 
 # create a modified .zshrc to produce a trace log
-local origzshrc=$(</tmp/ztrace/.zshrc.orig)
+# because of errors in making $origzshrc a local, it must be a global.
+origzshrc=$(</tmp/ztrace/.zshrc.orig)
 echo -en "$tracetop\n$origzshrc\n$tracebot" >! "/tmp/ztrace/.zshrc"
+
+# clean up the vars now that we are done with them.
+unset origzshrc
+unset tracetop
+unset tracebot
 
 print "\nSpawning zsh and producing trace...\n\n"
 print "The shell must be interactive to produce a trace"
