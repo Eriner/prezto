@@ -1,7 +1,7 @@
 Editor
 ======
 
-Sets key bindings.
+Sets terminal key bindings.
 
 Settings
 --------

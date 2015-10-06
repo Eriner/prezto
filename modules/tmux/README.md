@@ -1,7 +1,7 @@
 Tmux
 ====
 
-Defines [tmux][1] aliases and provides for auto launching it at start-up.
+Defines [tmux][1] aliases and provides support for auto launching it at start-up.
 
 Settings
 --------

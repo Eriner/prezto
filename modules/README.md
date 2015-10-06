@@ -8,7 +8,7 @@ Load modules in *zpreztorc*. The order matters.
 Archive
 -------
 
-Provides functions to list and extract archives.
+Provides functions to create, list, and extract archives.
 
 Command-Not-Found
 -----------------
@@ -26,6 +26,12 @@ Directory
 
 Sets directory options and defines directory aliases.
 
+
+Debug
+-----
+
+Provides functions to debug prezto and zsh.
+
 DNF
 ---
 
@@ -39,7 +45,7 @@ Defines dpkg aliases and functions.
 Editor
 ------
 
-Sets key bindings.
+Sets terminal key bindings.
 
 Emacs
 -----
@@ -181,7 +187,7 @@ Sets terminal window and tab titles.
 Tmux
 ----
 
-Defines tmux aliases and provides for auto launching it at start-up.
+Defines tmux aliases and provides support for auto launching it at start-up.
 
 Utility
 -------
