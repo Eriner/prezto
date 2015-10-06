@@ -2,7 +2,7 @@ Prezto — Instantly Awesome Zsh
 ==============================
 
 Prezto is the configuration framework for [Zsh][1]; it enriches the command line
-interface environment with sane defaults, aliases, functions, auto completion,
+interface environment with sane defaults, aliases, functions, auto-completion,
 and prompt themes.
 
 This is a fork of the [original semi-abandoned Prezto][9] maintained by Sorin Ionescu.
@@ -30,7 +30,11 @@ version is 4.3.17.
         done
 
     NB: The above will not overwrite or update any existing `.zshrc`. Therefore, if you
-    have an existing `.zshrc` you must manually add the line `source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"`.
+    have an existing `.zshrc` you must manually add the lines: 
+
+		if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+		source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+		fi
 
   4. Set Zsh as your default shell:
 
@@ -55,11 +59,11 @@ Usage
 -----
 
 Prezto has many features disabled by default. Read the source code and
-accompanying README files to learn of what is available.
+accompanying README files to learn what features are available.
 
 ### Modules
 
-  1. Browse */modules* to see what is available.
+  1. Browse [.zprezto/modules][10] to see what is available.
   2. Load the modules you need in *~/.zpreztorc* then open a new Zsh terminal
      window or tab.
 
@@ -76,9 +80,8 @@ Customization
 -------------
 
 The project is managed via [Git][3]. It is highly recommended that you fork this
-project; so, that you can commit your changes and push them to [GitHub][4] to
-not lose them. If you do not know how to use Git, follow this [tutorial][5] and
-bookmark this [reference][6].
+project; you can commit your changes and push them to [GitHub][4] to not lose them.
+If you do not know how to use Git, follow this [tutorial][5] and bookmark this [reference][6].
 
 Resources
 ---------
@@ -123,3 +126,4 @@ SOFTWARE.
 [7]: http://www.bash2zsh.com/zsh_refcard/refcard.pdf
 [8]: http://grml.org/zsh/zsh-lovers.html
 [9]: https://github.com/sorin-ionescu/prezto
+[10]: https://github.com/Eriner/prezto/tree/master/modules
