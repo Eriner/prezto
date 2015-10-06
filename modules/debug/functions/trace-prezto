@@ -1,0 +1,87 @@
+#!/usr/bin/env zsh
+#
+# Generates trace log to debug prezto and zsh issues
+#
+# Authors:
+#   Matt Hamilton <m@tthamilton.com>
+#
+
+cat >&2 <<EOF
+
+This function creates a trace log to debug
+zsh and prezto functionality.
+
+It will copy your .zshrc to /tmp/ztrace/, ammend profiling
+code, launch a new shell, log the trace, close the shell,
+archive the logs, and finally print the path to the archive.
+
+EOF
+
+read \?"Press [Enter] to begin trace."
+
+mkdir -p "/tmp/ztrace"
+# make sure that we were able to create the directory
+if [[ ! -d "/tmp/ztrace" ]]; then
+	print "failed to create /tmp/ztrace directory. Aborting."
+	return 1
+fi
+
+# we do not want to use ${ZDOTDIR:-$HOME} here.
+# system-wide installs would sed this to /usr/lib.
+cp "${HOME}/.zshrc" "/tmp/ztrace/.zshrc.orig"
+# copy .zpreztorc into dir so that it is archived with logs
+cp "${HOME}/.zpreztorc" "/tmp/ztrace/.zpreztorc"
+# do the same for the .zprezto directory, this time with ${ZDOTDIR:-$HOME}
+# rsync will allow us to not have to copy the .git folder; use if available 
+# (find+cp doesn't preserve the right things)
+if (( $+commands[rsync] )); then
+	rsync -az --exclude .git "${ZDOTDIR:-$HOME}/.zprezto" "/tmp/ztrace/"
+else
+	cp -R "${ZDOTDIR:-$HOME}/.zprezto" "/tmp/ztrace/"
+fi
+
+# trace code to add to modified .zshrc
+read -d '' tracetop << EOF || true
+#######################
+# zprezto trace start #
+#######################
+exec 3>&2 2> >(tee /tmp/ztrace/sample-time.\$\$.log |
+	sed -u 's/^.*$/now/' |
+    date -f - +%s.%N >/tmp/ztrace/sample-time.\$\$.tim)
+set -x
+EOF
+
+read -d '' tracebot << EOF || true
+#####################
+# zprezto trace end #
+#####################
+
+set +x
+exec 2>&3 3>&-
+EOF
+
+# create a modified .zshrc to produce a trace log
+local origzshrc=$(cat "/tmp/ztrace/.zshrc.orig")
+echo -en "$tracetop\n$origzshrc\n$tracebot" >! "/tmp/ztrace/.zshrc"
+
+print "\nSpawning zsh and producing trace...\n\n"
+print "The shell must be interactive to produce a trace"
+print "please type 'exit'\n"
+ZDOTDIR=/tmp/ztrace/ zsh
+print "Trace complete.\n"
+print "Parsing logs to pretty format..."
+
+# this is ugly thing makes it pretty... (execution time)
+paste <( while read tim; do crt=000000000$((${tim//.}-10#0$last)); printf "%12.9f\n" ${crt:0:${#crt}-9}.${crt:${#crt}-9}; last=${tim//.}; done < /tmp/ztrace/sample-time.(*).tim; ) /tmp/ztrace/sample-time.(*).log >!ste <( while read tim; do crt=000000000$((${tim//.}-10#0$last)); printf "%12.9f\n" ${crt:0:${#crt}-9}.${crt:${#crt}-9}; last=${tim//.}; done < /tmp/ztrace/sample-time.(*).tim; ) /tmp/ztrace/sample-time.(*).log > "/tmp/ztrace/ztrace.log"
+
+print "Archiving trace logs...\n"
+
+tar -cf "/tmp/ztrace.tar.gz" "/tmp/ztrace/"
+
+print "Archive complete!\n"
+
+print "\nTrace by with execution time available at:"
+print "\t/tmp/ztrace/ztrace.log"
+print "\nArchive (for sharing/help) available at:"
+print "\t/tmp/ztrace.tar.gz"
+
