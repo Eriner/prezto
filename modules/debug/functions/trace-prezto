@@ -61,7 +61,7 @@ exec 2>&3 3>&-
 EOF
 
 # create a modified .zshrc to produce a trace log
-local origzshrc=$(cat "/tmp/ztrace/.zshrc.orig")
+local origzshrc=$(</tmp/ztrace/.zshrc.orig)
 echo -en "$tracetop\n$origzshrc\n$tracebot" >! "/tmp/ztrace/.zshrc"
 
 print "\nSpawning zsh and producing trace...\n\n"
