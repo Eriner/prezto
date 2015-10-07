@@ -140,6 +140,7 @@ Functions
 ### Resource usage
 
   - `psu` displays user owned processes status.
+  - `check-restart` lists running binaries that rely on changed/deleted files.
 
 ### Search and Replace
 
