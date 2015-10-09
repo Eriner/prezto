@@ -60,6 +60,7 @@ Aliases
   - `rsync`
   - `scp`
   - `sftp`
+  -	`wget`
 
 ### General
 
