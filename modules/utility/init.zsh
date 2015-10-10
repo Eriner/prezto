@@ -48,8 +48,8 @@ alias wget='noglob wget'
 
 # Define general aliases.
 # preserve sudo aliases; see https://wiki.archlinux.org/index.php/Sudo#Passing_aliases
-alias _='sudo '
-alias sudo='sudo '
+alias _='sudo'
+alias sudo='sudo'
 alias b='${(z)BROWSER}'
 alias cp="${aliases[cp]:-cp} -i"
 alias e='${(z)VISUAL:-${(z)EDITOR}}'
