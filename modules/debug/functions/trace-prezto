@@ -45,15 +45,36 @@ else
 fi
 
 # trace code to add to modified .zshrc
-read -d '' tracetop << EOF || true
+if [[ "$OSTYPE" == linux-gnu ]]; then
+	read -d '' tracetop << EOF || true
 #######################
 # zprezto trace start #
 #######################
 exec 3>&2 2> >(tee /tmp/ztrace/sample-time.\$\$.log |
 	sed -u 's/^.*$/now/' |
-    date -f - +%s.%N >/tmp/ztrace/sample-time.\$\$.tim)
+	date -f - +%s.%N >/tmp/ztrace/sample-time.\$\$.tim)
 set -x
 EOF
+
+# we need gnu-utils to do this, so we must check for darwin/bsd.
+# if these platforms, we need to call gsed and gdate explicitly.
+elif [[ "$OSTYPE" == (darwin*|*bsd*) ]]; then
+	if (( $+commands[gdate] && $+commands[gsed] )); then
+		read -d '' tracetop << EOF || true
+#######################
+# zprezto trace start #
+#######################
+exec 3>&2 2> >(tee /tmp/ztrace/sample-time.\$\$.log |
+	gsed -u 's/^.*$/now/' |
+	gdate -f - +%s.%N >/tmp/ztrace/sample-time.\$\$.tim)
+set -x
+EOF
+	else
+		print "debug module requires both gnu-sed (gsed) and gnu-date (gdate)."
+		print "please install these with brew before attempting to trace."
+		return 1
+	fi
+fi
 
 read -d '' tracebot << EOF || true
 #####################
@@ -61,7 +82,11 @@ read -d '' tracebot << EOF || true
 #####################
 
 set +x
-exec 2>&3 3>&-
+#non-linux systems have weird fd; also, no real need to redirect back
+#prompt is (practically speaking) non-interactive, fd exists only for that process
+#which is closed (by typing exit)
+
+#exec 2>&3 3>&-
 EOF
 
 # create a modified .zshrc to produce a trace log
@@ -79,7 +104,7 @@ print "The shell must be interactive to produce a trace"
 print "please type 'exit'\n"
 ZDOTDIR=/tmp/ztrace zsh
 print "Trace complete.\n"
-print "Parsing logs to pretty format..."
+print "Parsing logs to pretty format; this may take some time..."
 
 # this is ugly thing makes it pretty... (execution time)
 paste <( while read tim; do crt=000000000$((${tim//.}-10#0$last)); printf "%12.9f\n" ${crt:0:${#crt}-9}.${crt:${#crt}-9}; last=${tim//.}; done < /tmp/ztrace/sample-time.(*).tim; ) /tmp/ztrace/sample-time.(*).log >!ste <( while read tim; do crt=000000000$((${tim//.}-10#0$last)); printf "%12.9f\n" ${crt:0:${#crt}-9}.${crt:${#crt}-9}; last=${tim//.}; done < /tmp/ztrace/sample-time.(*).tim; ) /tmp/ztrace/sample-time.(*).log > "/tmp/ztrace/ztrace.log"
