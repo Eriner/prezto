@@ -24,6 +24,18 @@ mkdir -p "/tmp/ztrace"
 if [[ ! -d "/tmp/ztrace" ]]; then
 	print "failed to create /tmp/ztrace directory. Aborting."
 	return 1
+else
+	# check if known output file, if exists
+	# rm all directory contents
+	if [[ -e "/tmp/ztrace/ztrace.log" ]]; then
+		print "\nLogs from previous run of trace-prezto are present"
+		print "Deleting old logs now..."
+		# use of anonymous function for dotglob opt
+		() {
+			setopt dotglob
+			rm -rf /tmp/ztrace/*
+		}
+	fi
 fi
 
 # get some basic system information (kernel and zsh version)
@@ -74,6 +86,11 @@ EOF
 		print "please install these with brew before attempting to trace."
 		return 1
 	fi
+else
+	print "your system, ${OSTYPE}, is an unknown system."
+	print "please create an issue at:"
+	print "\thttps://github.com/Eriner/prezto/issues"
+	return 1
 fi
 
 read -d '' tracebot << EOF || true
@@ -107,7 +124,16 @@ print "Trace complete.\n"
 print "Parsing logs to pretty format; this may take some time..."
 
 # this is ugly thing makes it pretty... (execution time)
-paste <( while read tim; do crt=000000000$((${tim//.}-10#0$last)); printf "%12.9f\n" ${crt:0:${#crt}-9}.${crt:${#crt}-9}; last=${tim//.}; done < /tmp/ztrace/sample-time.(*).tim; ) /tmp/ztrace/sample-time.(*).log >!ste <( while read tim; do crt=000000000$((${tim//.}-10#0$last)); printf "%12.9f\n" ${crt:0:${#crt}-9}.${crt:${#crt}-9}; last=${tim//.}; done < /tmp/ztrace/sample-time.(*).tim; ) /tmp/ztrace/sample-time.(*).log > "/tmp/ztrace/ztrace.log"
+paste <( while read tim; do crt=000000000$((${tim//.}-10#0$last)); printf "%12.9f\n" ${crt:0:${#crt}-9}.${crt:${#crt}-9}; last=${tim//.}; done < /tmp/ztrace/sample-time.(*).tim; ) /tmp/ztrace/sample-time.(*).log > "/tmp/ztrace/ztrace.log" 
+print "Parsing complete!"
+
+# safe to remove old, unneeded environment files 
+print "Tidying up before archive..."
+rm -f /tmp/ztrace/sample-time.*
+rm -rf /tmp/ztrace/.zprezto
+rm -f /tmp/ztrace/.zshrc
+mv /tmp/ztrace/.zshrc.orig /tmp/ztrace/.zshrc
+rm -f /tmp/ztrace/.zhistory
 
 print "Archiving trace logs...\n"
 
