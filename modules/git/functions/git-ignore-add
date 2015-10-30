@@ -11,7 +11,7 @@ if ! git-root &> /dev/null; then
   return 1
 fi
 
-# we are in a git repository. add paramaters to .gitignore
+# we are in a git repository. add parameters to .gitignore
 for file in "$@"
 do
   if [ -e $(git-root)/.gitignore ]; then
