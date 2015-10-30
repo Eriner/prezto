@@ -1,0 +1,22 @@
+#
+# Adds files passed as parameters to .gitignore in project root
+#
+# Authors:
+#   Matt Hamilton <m@tthamilton.com>
+#
+
+# make sure we have a git-root
+if ! git-root &> /dev/null; then
+  echo 'not in a git repository'
+  return 1
+fi
+
+# we are in a git repository. add paramaters to .gitignore
+for file in "$@"
+do
+  if [ -e $(git-root)/.gitignore ]; then
+    echo ${file} >> $(git-root)/.gitignore
+  else
+    echo ${file} > $(git-root)/.gitignore
+  fi
+done
