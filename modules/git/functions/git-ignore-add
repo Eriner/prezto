@@ -14,9 +14,5 @@ fi
 # we are in a git repository. add parameters to .gitignore
 for file in "$@"
 do
-  if [ -e $(git-root)/.gitignore ]; then
-    echo ${file} >> $(git-root)/.gitignore
-  else
-    echo ${file} > $(git-root)/.gitignore
-  fi
+  print ${file} >>! $(git-root)/.gitignore
 done
