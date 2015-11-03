@@ -1,15 +1,15 @@
-#!/usr/bin/env zsh
 #
 # prompt setup function common to many prompts
-# moved to external function to ruduce rudundant code
+# moved to external function to ruduce code rudundancy
 #
-local prompt="$1"
-local pwd="${PWD/#$HOME/~}"
+local current_pwd="${PWD/#$HOME/~}"
+local ret_directory
  
-if [[ "$pwd" == (#m)[/~] ]]; then
-	# because this function is sourced from other scripts, the vars must be exported
-  export _prompt_"${prompt}"_pwd="$MATCH"
+if [[ "$current_pwd" == (#m)[/~] ]]; then
+  ret_directory="$MATCH"
   unset MATCH
 else
-  export _prompt_"${prompt}"_pwd="${${${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}%/}//\%/%%}/${${pwd:t}//\%/%%}"
+  ret_directory="${${${${(@j:/:M)${(@s:/:)current_pwd}##.#?}:h}%/}//\%/%%}/${${current_pwd:t}//\%/%%}"
 fi
+
+print "$ret_directory"
