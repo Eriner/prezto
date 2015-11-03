@@ -7,12 +7,11 @@
 
 # make sure we have a git-root
 if ! git-root &> /dev/null; then
-  echo 'not in a git repository'
+  print 'not in a git repository' >&2
   return 1
 fi
 
 # we are in a git repository. add parameters to .gitignore
-for file in "$@"
-do
-  print ${file} >>! $(git-root)/.gitignore
+for file in "$@"; do
+  print "$file" >>! $(git-root)/.gitignore
 done

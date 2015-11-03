@@ -22,25 +22,25 @@ read \?"Press [Enter] to begin trace."
 mkdir -p "/tmp/ztrace"
 # make sure that we were able to create the directory
 if [[ ! -d "/tmp/ztrace" ]]; then
-	print "failed to create /tmp/ztrace directory. Aborting."
-	return 1
+  print "failed to create /tmp/ztrace directory. Aborting."
+  return 1
 else
-	# check if known output file, if exists
-	# rm all directory contents
-	if [[ -e "/tmp/ztrace/ztrace.log" ]]; then
-		print "\nLogs from previous run of trace-prezto are present"
-		print "Deleting old logs now..."
-		# use of anonymous function for dotglob opt
-		() {
-			setopt dotglob
-			rm -rf /tmp/ztrace/*
-		}
-	fi
+  # check if known output file, if exists
+  # rm all directory contents
+  if [[ -e "/tmp/ztrace/ztrace.log" ]]; then
+    print "\nLogs from previous run of trace-prezto are present"
+    print "Deleting old logs now..."
+    # use of anonymous function for dotglob opt
+    () {
+      setopt dotglob
+      rm -rf /tmp/ztrace/*
+    }
+  fi
 fi
 
 # get some basic system information (kernel and zsh version)
-echo $(zsh --version) > /tmp/ztrace/sysinfo
-echo $(uname -mosr) >> /tmp/ztrace/sysinfo
+print $(zsh --version) > /tmp/ztrace/sysinfo
+print $(uname -mosr) >> /tmp/ztrace/sysinfo
 
 # we do not want to use ${ZDOTDIR:-$HOME} here.
 # system-wide installs would sed this to /usr/lib.
@@ -51,46 +51,46 @@ cp "${HOME}/.zpreztorc" "/tmp/ztrace/.zpreztorc"
 # rsync will allow us to not have to copy the .git folder; use if available 
 # (find+cp doesn't preserve the right things)
 if (( $+commands[rsync] )); then
-	rsync -az --exclude .git "${ZDOTDIR:-$HOME}/.zprezto" "/tmp/ztrace/"
+  rsync -az --exclude .git "${ZDOTDIR:-$HOME}/.zprezto" "/tmp/ztrace/"
 else
-	cp -R "${ZDOTDIR:-$HOME}/.zprezto" "/tmp/ztrace/"
+  cp -R "${ZDOTDIR:-$HOME}/.zprezto" "/tmp/ztrace/"
 fi
 
 # trace code to add to modified .zshrc
 if [[ "$OSTYPE" == linux-gnu ]]; then
-	read -d '' tracetop << EOF || true
+  read -d '' tracetop << EOF || true
 #######################
 # zprezto trace start #
 #######################
 exec 3>&2 2> >(tee /tmp/ztrace/sample-time.\$\$.log |
-	sed -u 's/^.*$/now/' |
-	date -f - +%s.%N >/tmp/ztrace/sample-time.\$\$.tim)
+  sed -u 's/^.*$/now/' |
+  date -f - +%s.%N >/tmp/ztrace/sample-time.\$\$.tim)
 set -x
 EOF
 
 # we need gnu-utils to do this, so we must check for darwin/bsd.
 # if these platforms, we need to call gsed and gdate explicitly.
 elif [[ "$OSTYPE" == (darwin*|*bsd*) ]]; then
-	if (( $+commands[gdate] && $+commands[gsed] )); then
-		read -d '' tracetop << EOF || true
+  if (( $+commands[gdate] && $+commands[gsed] )); then
+    read -d '' tracetop << EOF || true
 #######################
 # zprezto trace start #
 #######################
 exec 3>&2 2> >(tee /tmp/ztrace/sample-time.\$\$.log |
-	gsed -u 's/^.*$/now/' |
-	gdate -f - +%s.%N >/tmp/ztrace/sample-time.\$\$.tim)
+  gsed -u 's/^.*$/now/' |
+  gdate -f - +%s.%N >/tmp/ztrace/sample-time.\$\$.tim)
 set -x
 EOF
-	else
-		print "debug module requires both gnu-sed (gsed) and gnu-date (gdate)."
-		print "please install these with brew before attempting to trace."
-		return 1
-	fi
+  else
+    print "debug module requires both gnu-sed (gsed) and gnu-date (gdate)."
+    print "please install these with brew before attempting to trace."
+    return 1
+  fi
 else
-	print "your system, ${OSTYPE}, is an unknown system."
-	print "please create an issue at:"
-	print "\thttps://github.com/Eriner/prezto/issues"
-	return 1
+  print "your system, ${OSTYPE}, is an unknown system."
+  print "please create an issue at:"
+  print "\thttps://github.com/Eriner/prezto/issues"
+  return 1
 fi
 
 read -d '' tracebot << EOF || true
@@ -109,7 +109,7 @@ EOF
 # create a modified .zshrc to produce a trace log
 # because of errors in making $origzshrc a local, it must be a global.
 origzshrc=$(</tmp/ztrace/.zshrc.orig)
-echo -en "$tracetop\n$origzshrc\n$tracebot" >! "/tmp/ztrace/.zshrc"
+print "$tracetop\n$origzshrc\n$tracebot" >! "/tmp/ztrace/.zshrc"
 
 # clean up the vars now that we are done with them.
 unset origzshrc
