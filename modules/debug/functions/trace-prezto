@@ -117,9 +117,7 @@ unset tracetop
 unset tracebot
 
 print "\nSpawning zsh and producing trace...\n\n"
-print "The shell must be interactive to produce a trace"
-print "please type 'exit'\n"
-ZDOTDIR=/tmp/ztrace zsh
+ZDOTDIR=/tmp/ztrace zsh -i -c exit 
 print "Trace complete.\n"
 print "Parsing logs to pretty format; this may take some time..."
 
