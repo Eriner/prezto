@@ -101,13 +101,18 @@ zstyle -e ':completion:*:hosts' hosts 'reply=(
 
 # Don't complete uninteresting users...
 zstyle ':completion:*:*:*:users' ignored-patterns \
-  adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
-  dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
-  hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
-  mailman mailnull mldonkey mysql nagios \
-  named netdump news nfsnobody nobody nscd ntp nut nx openvpn \
-  operator pcap postfix postgres privoxy pulse pvm quagga radvd \
-  rpc rpcuser rpm shutdown squid sshd sync 'systemd-*' uucp vcsa xfs '_*'
+  adm amanda amavis apache avahi beaglidx bin \
+  cacti canna colord clamav \
+  daemon dbus distcache dovecot dovenull \
+  fax ftp games gdm git gitlab gkrellmd gopher \
+  hacluster haldaemon halt hsqldb http ident junkbust ldap lp \
+  mail mailman mailnull mldonkey mpd mysql \
+  nagios nobody named netdump news nfsnobody nobody \
+  nscd ntp nut nx opendkim openvpn operator \
+  pcap polkitd postfix postgres postgrey privoxy pulse pvm \
+  quagga redis radvd rpc rpcuser rpm \
+  shutdown squid sshd sync 'systemd-*' \
+  transmission unbound uucp uuidd vcsa vmail xfs '_*'
 
 # ... unless we really want to.
 zstyle '*' single-ignored show
