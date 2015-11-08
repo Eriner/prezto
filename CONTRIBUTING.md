@@ -34,7 +34,7 @@ improve its performance, do not hesitate to fork and send pull requests.
    - A screenshots section must be present in the file header.
    - The pull request description must have [embedded screenshots][5].
 
-[1]: https://github.com/sorin-ionescu/prezto/contributors
+[1]: https://github.com/Eriner/prezto/contributors
 [2]: http://gun.io/blog/how-to-github-fork-branch-and-pull-request
 [3]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 [4]: https://help.github.com/articles/using-pull-requests
