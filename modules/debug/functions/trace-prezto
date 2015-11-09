@@ -41,6 +41,7 @@ fi
 # get some basic system information (kernel and zsh version)
 print $(zsh --version) > /tmp/ztrace/sysinfo
 print $(uname -mosr) >> /tmp/ztrace/sysinfo
+print -l $fpath >> /tmp/ztrace/sysinfo
 
 # we do not want to use ${ZDOTDIR:-$HOME} here.
 # system-wide installs would sed this to /usr/lib.
