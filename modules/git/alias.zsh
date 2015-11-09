@@ -81,6 +81,7 @@ alias gf='git fetch'
 alias gfc='git clone'
 alias gfm='git pull'
 alias gfr='git pull --rebase'
+alias gfu='git remote update -p; git merge --ff-only @{u}'
 
 # Grep (g)
 alias gg='git grep'
