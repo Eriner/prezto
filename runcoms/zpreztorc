@@ -156,3 +156,10 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
 
 # Integrate with iTerm2.
 # zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+
+#
+# Completion
+#
+
+# Have editor tab completion ignore binary/media files.
+zstyle ':prezto:module:completion' editor-ignores 'yes'
