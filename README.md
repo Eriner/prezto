@@ -1,11 +1,22 @@
 Prezto — Instantly Awesome Zsh
 ==============================
 
-Prezto is the configuration framework for [Zsh][1]; it enriches the command line
-interface environment with sane defaults, aliases, functions, auto-completion,
-and prompt themes.
-
 This is a fork of the [original semi-abandoned Prezto][9] maintained by Sorin Ionescu.
+
+NOTICE
+======
+
+I will no longer be making contributions to this fork. Instead, I have created my own configuration framework; [Zim](https://github.com/Eriner/zim). 
+I suggest anyone using my fork of prezto take a look at [Zim](https://github.com/Eriner/zim). 
+
+I created this fork with the intent to maintain prezto in Sorin's absence. 
+After spending many, many hours with the codebase, I decided the best thing to do was to create a new project with the same goal, but done better.
+
+[Zim](https://github.com/Eriner/zim) is the product of this, and takes much inspiration from oh-my-zsh and prezto.
+One of the main goals was to improve the speed even more, [which I've done](https://gist.github.com/Eriner/3aa88b161615c2913930).
+
+
+
 
 Installation
 ------------
