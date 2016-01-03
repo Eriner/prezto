@@ -13,7 +13,7 @@ I created this fork with the intent to maintain prezto in Sorin's absence.
 After spending many, many hours with the codebase, I decided the best thing to do was to create a new project with the same goal, but done better.
 
 [Zim](https://github.com/Eriner/zim) is the product of this, and takes much inspiration from oh-my-zsh and prezto.
-One of the main goals was to improve the speed even more, [which I've done](https://gist.github.com/Eriner/3aa88b161615c2913930).
+One of the main goals was to improve the speed even more, [which I've done](https://github.com/Eriner/zim/wiki/Speed).
 
 
 
